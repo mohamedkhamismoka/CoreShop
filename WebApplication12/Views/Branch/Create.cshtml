@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model BranchVM
+@section style{
+    <link href="./assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="./assets/css/Customer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/Customer.css" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+        }
+
+        form {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+
+        .y {
+            position: relative;
+            margin-left: 10px;
+            width: 310px
+        }
+     
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;">Create New Branch</h1>
+</center>
+<form  asp-controller="Branch" asp-action="Create" method="post">
+    @*<input type="hidden" class="form-control" id="name" placeholder="Enter Name" asp-for="Name" name="nnmae">
+     <input type="hidden" class="form-control" id="name" placeholder="Enter Name" asp-for="Phone" name="pphone">
+          <input type="hidden" class="form-control"  placeholder="Enter Name" asp-for="Branc_Id" >*@
+    <div class="form-group">
+        <label class="lb" asp-for="Name">Name</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+
+                <span  class="text-danger font-weight-bold" >@ViewBag.Namewarn</span>
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="Phone">Phone</label>
+        <input type="Text" class="form-control" id="address" placeholder="Enter Phone" asp-for="Phone">
+        <span asp-validation-for="Phone" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+           
+                <span  class="text-danger font-weight-bold" >@ViewBag.phonewarn</span>
+    </div>
+        <div class="form-group">
+        <label  class="lb" asp-for="manager">MGR Name</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter Manager name" asp-for="manager">
+        <span asp-validation-for="manager" class="text-danger font-weight-bold"></span>
+    </div>
+   
+   
+
+    <center>
+        <button type="submit" class="btn btn-pill btn-primary z" style="width:120px">Create</button>
+       
+       
+
+    </center>
+</form>
+@section scripts{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+
+
+
+
+

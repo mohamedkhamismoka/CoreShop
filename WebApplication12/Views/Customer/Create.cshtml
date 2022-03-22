@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model CustomerVM
+@section style{
+    <link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="../assets/css/Customer.css" rel="stylesheet" />
+
+
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+        }
+
+        form {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+
+        .y {
+            position: relative;
+            margin-left: 10px;
+            width: 310px
+        }
+     
+ 
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;">Create New Customer</h1>
+</center>
+<form  asp-controller="Customer" asp-action="Create" method="post">
+    <div class="form-group">
+        <label class="lb" asp-for="Name">Name</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="address">Address</label>
+        <input type="Text" class="form-control" id="address" placeholder="Enter Address" asp-for="address">
+        <span asp-validation-for="address" class="text-danger font-weight-bold"></span>
+    </div>
+        <div class="form-group">
+        <label  class="lb" asp-for="phone">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" asp-for="phone">
+        <span asp-validation-for="phone" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+       
+                <span  class="text-danger font-weight-bold">@ViewBag.phonewarn</span>
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="mail"> Email</label>
+        <input type="email"  class="form-control" id="mail" placeholder="Enter mail"  asp-for="mail">
+        <span asp-validation-for="mail" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+         <br />
+        <span  class="text-danger font-weight-bold">@ViewBag.mailwarn</span>
+    </div>
+   
+
+    <center>
+        <button type="submit" class="btn btn-pill btn-primary z" style="width:120px">Create</button>
+       
+
+    </center>
+</form>
+@section scripts{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+
+
+
+

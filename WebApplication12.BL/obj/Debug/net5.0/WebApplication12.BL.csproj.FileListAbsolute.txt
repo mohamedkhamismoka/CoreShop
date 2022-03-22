@@ -1,0 +1,72 @@
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.deps.json
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.json
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.dev.json
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.dll
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.pdb
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.AssemblyReference.cache
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfoInputs.cache
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfo.cs
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CoreCompileInputs.cache
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CopyComplete
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-masreya\source\repos\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.genruntimeconfig.cache
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.deps.json
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.json
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.dev.json
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.dll
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.pdb
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.AssemblyReference.cache
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfoInputs.cache
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfo.cs
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CoreCompileInputs.cache
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CopyComplete
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\el msria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.genruntimeconfig.cache
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.deps.json
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.json
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.dev.json
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.dll
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.pdb
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.AssemblyReference.cache
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfoInputs.cache
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfo.cs
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CoreCompileInputs.cache
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CopyComplete
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-masreya\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.genruntimeconfig.cache
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.deps.json
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.json
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.dev.json
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.dll
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.pdb
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.AssemblyReference.cache
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfoInputs.cache
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.AssemblyInfo.cs
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CoreCompileInputs.cache
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.csproj.CopyComplete
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.dll
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\ref\WebApplication12.BL.dll
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.pdb
+C:\Users\EL-Masria\Desktop\WebApplication12\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.genruntimeconfig.cache

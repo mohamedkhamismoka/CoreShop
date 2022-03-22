@@ -1,0 +1,73 @@
+﻿
+@model IEnumerable<WebApplication12.BL.VM.Product_orderVM>
+
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order Details</title>
+    
+</head>
+<body>
+    <center>
+
+
+    <h4 style="margin-top:100px;color:red">Order Details</h4>
+    <hr />
+    <div id="Grid">
+        <h1 style="text-align:center;color:red"> @TempData["x"]</h1>
+        <table style="font-size: 12pt;width:500px" class="table table-hover table-striped table-bordered text-center">
+            <tr>
+                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Product ID</th>
+                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Product Name</th>
+                <th style="background-color: #B8DBFD;border: 1px solid #ccc">quantity</th>
+                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Unit Price</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:120px;border: 1px solid #ccc">@item.pro_id</td>
+                    <td style="width:120px;border: 1px solid #ccc">@item.product.Name</td>
+                    <td style="width:120px;border: 1px solid #ccc">@item.quantity</td>
+                    <td style="width:120px;border: 1px solid #ccc">@item.product.price </td>
+                </tr>
+            }
+          <tr style="color:red">
+              <td>
+                Total Price
+              </td>
+              <td colspan="3"> @ViewBag.total</td>
+          </tr>
+          <tr style="text-align:center">
+              <td colspan="4">
+                       With best Wishes From Mohamdia Co
+              </td>
+         
+          </tr>
+        </table>
+    </div>
+    <br />
+        </center>
+        <center>
+
+       
+    <form asp-action="send" asp-controller="Mail" method="post">
+        <input type="hidden" name="tblHtml" />
+                <input type="hidden" name="mail" value="@ViewBag.mail" />
+                <input type="hidden" name="orderNo" value="@ViewBag.orderNo" />
+        <button type="submit" class="btn btn-pill btn-success btnSend"> Send Mail </button>
+
+    </form>
+     </center>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".btnSend").click(function () {
+              
+                $("input[name='tblHtml']").val($("#Grid").html());
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "GETMostProduct";
+}
+
+@model IEnumerable<WebApplication12.BL.VM.ProductVM>
+@section style{
+    <link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="../assets/css/Customer.css" rel="stylesheet" />
+       <link rel="stylesheet" href="~/assets/css/Customer.css" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+            text-align:center;
+        }
+
+        .x {
+            width: 700px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+
+        }
+
+       .y{
+            width: 150px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+            margin-top:150px;
+             margin-left:10px
+           
+       }
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;"> Most Expensive Product Details</h1>
+</center>
+<table class="table table-bordered table-hover table-striped x">
+<thead>
+    <tr>
+        <th>Product Number</th>
+         <th>Product Name</th>
+        
+          <th>Price</th>
+
+    </tr>
+</thead>
+<tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                   <td>@item.Name</td>
+                      <td>@item.price</td>
+                        
+            </tr>
+        }
+    </tbody>
+</table>
+<div >
+        <a class="btn btn-pill btn-primary y" asp-controller="status" asp-action="Index">Back</a>
+
+</div>
+
+
+
+
+
+
+

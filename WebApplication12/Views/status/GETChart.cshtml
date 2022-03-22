@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "GETChart";
+}
+
+@model List<int>
+@section style{
+    <link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="../assets/css/Customer.css" rel="stylesheet" />
+       <link rel="stylesheet" href="~/assets/css/Customer.css" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+            text-align:center;
+        }
+
+        .x {
+            width: 700px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+
+        }
+
+       .y{
+            width: 150px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+            margin-top:600px;
+            margin-left:10px
+           
+       }
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;"> Sales Details</h1>
+</center>
+<table class="table table-bordered table-hover table-striped x">
+<thead>
+    <tr>
+        <th>Month</th>
+         <th>Sales</th>
+         
+
+    </tr>
+</thead>
+<tbody>
+        
+            @for(int i=1; i <= Model.Count; i++)
+            {
+                  <tr>
+           <td>
+               @i
+           </td>
+                     <td>
+               @Model[i-1]
+           </td>
+            </tr>
+            
+          
+        }
+    </tbody>
+</table>
+<div >
+        <a class="btn btn-pill btn-primary y" asp-controller="status" asp-action="Index">Back</a>
+
+</div>
+
+
+
+
+
+
+

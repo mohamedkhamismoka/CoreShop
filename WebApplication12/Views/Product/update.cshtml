@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model ProductVM
+@section style{
+    <link href="./assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="./assets/css/Customer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/Customer.css" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+        }
+
+        form {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+
+        .y {
+            position: relative;
+            margin-left: 10px;
+            width: 310px
+        }
+     
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;">Update Product</h1>
+</center>
+<form  asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+          
+          <input type="hidden" class="form-control"  placeholder="Enter Name" asp-for="Name" name="nname" >
+           <input type="hidden" class="form-control"  placeholder="Enter Name"  value="@Model.barcode" name="img" >
+     <div class="form-group">
+        <label class="lb" asp-for="Name">Name</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Name">
+         <span asp-validation-for="Name" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+           <span  class="text-danger font-weight-bold" >@ViewBag.namewarn</span>
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="price">price</label>
+        <input type="Text" class="form-control" id="address" placeholder="Enter Price" asp-for="price">
+        <span asp-validation-for="price" class="text-danger font-weight-bold"></span>
+    </div>
+      <div class="form-group">
+<label class="lb"> Current BarCode </label><br />
+<img src="~/assets/files/BarCodes/@Model.barcode"  class="img-thumbnail width="120" height="80" style="margin-left:10px;" >
+          </div>
+
+
+        <div class="form-group">
+        <label  class="lb" asp-for="barcodeImg">New BarCode</label>
+        <input type="file" class="form-control" id="phone" placeholder="Enter BarCode " asp-for="barcodeImg">
+        <span asp-validation-for="barcodeImg" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+       
+               
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="production_date"> Production_Date</label>
+        <input type="date"  class="form-control" id="mail" placeholder="Enter mail"  asp-for="production_date">
+        <span asp-validation-for="production_date" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+       
+        
+    </div>
+
+    <div class="form-group">
+        <label  class="lb" asp-for="expire_date"> Expiration_Date</label>
+        <input type="date"  class="form-control" id="mail" placeholder="Enter Date"  asp-for="expire_date">
+        <span asp-validation-for="expire_date" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+       <span  class="text-danger font-weight-bold" style="margin-right:10px">@ViewBag.date</span>
+        
+    </div>
+   
+   <div class="form-group">
+        <label  class="lb" asp-for="quantity"> quantity</label>
+        <input type="text"  class="form-control" id="mail" placeholder="Enter Date"  asp-for="quantity">
+        <span asp-validation-for="quantity" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+       
+        
+    </div>
+   
+   
+
+
+    <center>
+        <button type="submit" class="btn btn-pill btn-primary z" style="width:120px">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-pill btn-success">Back To Data</a>
+       
+
+    </center>
+</form>
+@section scripts{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+
+
+
+

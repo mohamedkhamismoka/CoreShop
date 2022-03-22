@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@section datatable{
+<link href="../assets/css/Customer.css" rel="stylesheet" />
+}
+<center>
+    <h1 style="color:red;margin-top:100px"> Choose Date:</h1>
+    <form asp-controller="Report" asp-action="Excel" method="get" style="margin-top:50px;width:400px">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                </div>
+            </div>
+           <input class="form-control" name="date" placeholder="MM/DD/YYYY" type="date">
+        </div>
+        <button style="margin-top:10px" type="submit" class="btn btn-pill btn-success">Get Report</button>
+    </form>
+</center>
+

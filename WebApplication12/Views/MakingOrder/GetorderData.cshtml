@@ -1,0 +1,58 @@
+﻿
+
+@{
+    ViewData["Title"] = "Get Order data";
+}
+@model OrderVM
+@section style{
+    <link href="./assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="./assets/css/Customer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/Customer.css" />
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+        }
+
+        form {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+
+        .y {
+            position: relative;
+            margin-left: 10px;
+            width: 310px
+        }
+     
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:130px;">Order Data</h1>
+</center>
+
+<form asp-controller="MakingOrder" asp-action="GetorderData" method="post" >
+    <div class="form-group">
+        <label class="lb" asp-for="orderr_num">Order Number:</label>
+            <input type="text"  class="form-control" asp-for="orderr_num" />
+            <span asp-validation-for="orderr_num" class="font-weight-bold text-danger" style="margin-right:10px"></span>
+     <span  class="font-weight-bold text-danger" style="margin-right:10px">@ViewBag.warn</span>
+            
+    </div>
+    
+    <center>
+        <button type="submit" class="btn btn-pill btn-primary" style="width:120px;margin-bottom:5px;margin-top:-13px">Find</button>
+    </center>
+</form>
+@section scripts{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+

@@ -1,0 +1,413 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> sign;
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta content="Aronox – Admin Bootstrap4 Responsive Webapp Dashboard Templat" name="description">
+    <meta content="Spruko Technologies Private Limited" name="author">
+    <meta name="keywords" content="admin site template, html admin template,responsive admin template, admin panel template, bootstrap admin panel template, admin template, admin panel template, bootstrap simple admin template premium, simple bootstrap admin template, best bootstrap admin template, simple bootstrap admin template, admin panel template,responsive admin template, bootstrap simple admin template premium" />
+
+    <!-- Title -->
+    <title>Mohamadia For Sales</title>
+
+    <!--Favicon -->
+    <link rel="icon" href="~/assets/images/brand/favicon.ico" type="image/x-icon" />
+
+    <link href="~/assets/css/Custom.css" rel="stylesheet" />
+    <!-- Style css -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+
+    <!--Sidemenu css -->
+    <link href="~/assets/plugins/toggle-menu/sidemenu.css" rel="stylesheet">
+
+    <!-- P-scroll bar css-->
+    <link href="~/assets/plugins/p-scroll/perfect-scrollbar.css" rel="stylesheet" />
+
+    <!---Icons css-->
+    <link href="~/assets/plugins/iconfonts/icons.css" rel="stylesheet" />
+    <link href="~/assets/plugins/iconfonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+
+    <!-- Skin css-->
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="~/assets/skins/hor-skin/leftmenu-icon-default.css" />
+    <link rel="stylesheet" href="~/assets/skins/demo.css" />
+    <link rel="stylesheet" href="~/assets/fontawesome-iconpicker" />
+
+
+    @RenderSection("datatable",required:false)
+    @RenderSection("style",required:false)
+</head>
+
+<body>
+
+    <!---Global-loader-->
+    <div id="global-loader">
+        <img src="~/assets/images/svgs/loader.svg" alt="loader">
+    </div>
+
+    <div class="page">
+        <div class="page-main">
+            <div class="app-header header top-header">
+                <div class="container-fluid">
+                    <div class="d-flex">
+                        <a class="header-brand" href="index.html">
+                            <img src="~/assets/images/brand/logo-dark.png" class="header-brand-img dark-version" alt="Aronox logo">
+                            <img src="~/assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Aronox logo">
+                            <img src="~/assets/images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Aronox logo">
+                        </a>
+                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a><!-- sidebar-toggle-->
+                        <form class="form-inline">
+                            <div class="search-element">
+                                <input type="search" class="form-control header-search" tabindex="1">
+                                <button class="btn btn-primary-color" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+
+                        <div class="dropdown  header-setting">
+
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#">
+                                    Multi Pages
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Mail Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Default Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Documentation
+                                </a>
+                                <div class=" text-center p-2 border-top mt-3">
+                                    <a href="#" class="">updated</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <a href="#" data-toggle="search" class="nav-link nav-link-lg d-md-none navsearch"><i class="fa fa-search"></i></a>
+                            <div class="dropdown   header-fullscreen">
+                                <a class="nav-link icon full-screen-link" id="fullscreen-button">
+                                    <i class="mdi mdi-arrow-collapse"></i>
+                                </a>
+                            </div>
+                            <div class="dropdown header-notify">
+                                <a class="nav-link icon text-center" data-toggle="dropdown">
+                                    <i class="mdi mdi-email-outline"></i>
+                                    <span class="nav-unread bg-danger pulse"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow w-300  pt-0">
+                                    <div class="dropdown-header mt-0 pt-0 border-bottom p-4">
+                                        <h5 class="dropdown-title mb-1 font-weight-semibold text-drak">Messages</h5>
+                                        <p class="dropdown-title-text subtext mb-0 pb-0 ">You have 4 unread messages</p>
+                                    </div>
+                                    <a href="#" class="dropdown-item d-flex pb-4 pt-4">
+                                        <div class="avatar avatar-md  mr-3 d-block cover-image border-radius-4" data-image-src="../assets/images/users/5.jpg">
+                                            <span class="avatar-status bg-green"></span>
+                                        </div>
+                                        <div>
+                                            <small class="dropdown-text">Madeleine</small>
+                                            <p class="mb-0 fs-13 text-muted">Hey! there I' am available</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex pb-4 pt-4">
+                                        <div class="avatar avatar-md  mr-3 d-block cover-image border-radius-4" data-image-src="~/assets/images/users/8.jpg">
+                                            <span class="avatar-status bg-red"></span>
+                                        </div>
+                                        <div>
+                                            <small class="dropdown-text">Anthony</small>
+                                            <p class="mb-0 fs-13 text-muted ">New product Launching</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex pb-4 pt-4">
+                                        <div class="avatar avatar-md  mr-3 d-block cover-image border-radius-4" data-image-src="~/assets/images/users/11.jpg">
+                                            <span class="avatar-status bg-yellow"></span>
+                                        </div>
+                                        <div>
+                                            <small class="dropdown-text">Olivia</small>
+                                            <p class="mb-0 fs-13 text-muted">New Schedule Realease</p>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-divider mt-0"></div>
+                                    <a href="#" class="dropdown-item text-center">See all Messages</a>
+                                </div>
+                            </div><!-- MESSAGE-BOX -->
+                            <div class="dropdown d-md-flex message">
+                                <a class="nav-link icon" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell-outline"></i>
+                                    <span class=" bg-success pulse-success "></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow pt-0">
+                                    <div class="dropdown-header border-bottom p-4 pt-0 mb-3 w-270">
+                                        <div class="d-flex">
+                                            <h5 class="dropdown-title float-left mb-1 font-weight-semibold text-drak">Notifications</h5>
+                                            <a href="#" class="fe fe-align-justify text-right float-right ml-auto text-muted"></a>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="dropdown-item d-flex pb-2 pt-2">
+                                        <div class="card box-shadow-0 mb-0">
+                                            <div class="card-body p-3">
+                                                <div class="notifyimg bg-gradient-primary border-radius-4">
+                                                    <i class="mdi mdi-email-outline"></i>
+                                                </div>
+                                                <div>
+                                                    <div>Message Sent.</div>
+                                                    <div class="small text-muted">3 hours ago</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex  pb-2">
+                                        <div class="card box-shadow-0 mb-0 ">
+                                            <div class="card-body p-3">
+                                                <div class="notifyimg bg-gradient-danger border-radius-4 bg-danger">
+                                                    <i class="fe fe-shopping-cart"></i>
+                                                </div>
+                                                <div>
+                                                    <div> Order Placed</div>
+                                                    <div class="small text-muted">5  hour ago</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex pb-2">
+                                        <div class="card box-shadow-0 mb-0">
+                                            <div class="card-body p-3">
+                                                <div class="notifyimg bg-gradient-success  border-radius-4 bg-success mr-2">
+                                                    <i class="fe fe-airplay"></i>
+                                                </div>
+                                                <div>
+                                                    <div>Your Admin launched</div>
+                                                    <div class="small text-muted">1 daya ago</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class=" text-center p-2 border-top mt-3">
+                                        <a href="#" class="">View All Notifications</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown ">
+                                <a class="nav-link pr-0 leading-none" href="#" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile-details mt-2">
+                                        <span class="mr-3 font-weight-semibold">
+                                            @if (sign.IsSignedIn(User))
+                                            {
+                                                int index = 0;
+                                                for (var i = 0; i < @User.Identity.Name.Length; i++)
+                                                {
+                                                    if (@User.Identity.Name[i].ToString() == "@")
+                                                    {
+                                                        index = i;
+                                                    }
+
+                                                }
+
+                                                @User.Identity.Name.Substring(0,index)
+                                                ;
+                                            }
+
+                                        </span>
+                                        <small class="text-muted mr-3">appdeveloper</small>
+                                    </div>
+                                    <img class="avatar avatar-md brround" src="~/assets/images/users/1.jpg" alt="image">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow w-250">
+                                    <div class="user-profile border-bottom p-3">
+                                        <div class="user-image"><img class="user-images" src="~/assets/images/users/1.jpg" alt="image"></div>
+                                        <div class="user-details">
+
+                                            <p class="mb-1 fs-13 text-muted">
+                                                @if (sign.IsSignedIn(User))
+                                                {
+                                                    int index = 0;
+                                                    for (var i = 0; i < @User.Identity.Name.Length; i++)
+                                                    {
+                                                        if (@User.Identity.Name[i].ToString() == "@")
+                                                        {
+                                                            index = i;
+                                                        }
+
+                                                    }
+
+                                                    @User.Identity.Name.Substring(0,index)
+                                                    ;
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="dropdown-item pt-3 pb-3"><i class="dropdown-icon mdi mdi-account-outline text-primary "></i> My Profile</a>
+                                    <a href="#" class="dropdown-item pt-3 pb-3"><i class="dropdown-icon mdi  mdi-message-outline text-primary"></i> Messages <span class="badge badge-pill badge-success">41</span></a>
+                                    <a href="#" class="dropdown-item pt-3 pb-3"><i class="dropdown-icon  mdi mdi-settings text-primary"></i> Setting</a>
+                                    <a href="#" class="dropdown-item pt-3 pb-3"><i class="dropdown-icon mdi mdi-help-circle-outline text-primary"></i> FAQ</a>
+                                    <a href="#" class="dropdown-item pt-3 pb-3"><i class="dropdown-icon  mdi  mdi-logout-variant text-primary"></i>Sign Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--aside open-->
+            <aside class="app-sidebar">
+                <div class="app-sidebar__user">
+                    <div class="dropdown user-pro-body text-center">
+                        <div class="user-pic">
+                            <img src="~/assets/images/users/1.jpg" alt="user-img" class="avatar-xl rounded-circle mb-1">
+                        </div>
+                        <div class="user-info">
+                            <h6 class=" mb-0 font-weight-semibold">
+                                @if (sign.IsSignedIn(User))
+                                {
+                                    int index = 0;
+                                    for (var i = 0; i < @User.Identity.Name.Length; i++)
+                                    {
+                                        if (@User.Identity.Name[i].ToString() == "@")
+                                        {
+                                            index = i;
+                                        }
+
+                                    }
+
+                                    @User.Identity.Name.Substring(0,index)
+                                    ;
+                                }
+                            </h6>
+                            <span class="text-muted app-sidebar__user-name text-sm">App Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="side-menu">
+                    <li class="slide">
+                        <a class="side-menu__item" tho asp-controller="Home" asp-action="Index"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Home</span></a>
+
+                    </li>
+
+
+                </ul>
+                <ul class="side-menu">
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Customer</span><i class="angle fa fa-angle-right"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" asp-controller="Customer" asp-action="Index"><span>Customer List</span></a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Branch</span><i class="angle fa fa-angle-right"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" asp-controller="Branch" asp-action="Index"><span>Branch List</span></a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-package"></i><span class="side-menu__label">Product</span><i class="angle fa fa-angle-right"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" asp-controller="Product" asp-action="Index"><span>Product List</span></a></li>
+
+
+                        </ul>
+                    </li>
+
+                    
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-file-text"></i><span class="side-menu__label">Orders</span><i class="angle fa fa-angle-right"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" asp-controller="MakingOrder" asp-action="GetorderData"><span>Get order</span></a></li>
+                           <li>
+                        <a class="slide-item" asp-controller="MakingOrder" asp-action="Index"><span class="side-menu__label">MakeOrder</span></a>
+
+                    </li>
+
+                        </ul>
+                    </li>
+
+                   
+
+
+                    <li class="slide">
+                        <a class="side-menu__item" asp-controller="status" asp-action="Index"><i class="side-menu__icon fe fe-pie-chart"></i><span class="side-menu__label">Statistics</span></a>
+
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" asp-controller="Report" asp-action="Index"><i class="side-menu__icon fe fe-codepen"></i><span class="side-menu__label">Reports</span></a>
+
+                    </li>
+                    <li class="slide" style="margin-top:10px">
+                        <center>
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button class="btn btn-pill btn-danger" type="submit">Logout<i class=" fe fe-log-out " style="margin-left:5px;margin-top:2px"></i></button>
+                            </form>
+                        </center>
+
+
+                    </li>
+                </ul>
+
+            </aside>
+            <!--aside closed-->
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <!-- Jquery js-->
+    <script src="~/assets/js/vendors/jquery-3.4.0.min.js"></script>
+
+    <!-- Bootstrap4 js-->
+    <script src="~/assets/plugins/bootstrap/popper.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--Otherchar~ js-->
+    <script src="~/assets/plugins/othercharts/jquery.sparkline.min.js"></script>
+
+    <!-- Circle-p~gress js-->
+    <script src="~/assets/js/vendors/circle-progress.min.js"></script>
+
+    <!-- Jquery-r~ing js-->
+    <script src="~/assets/plugins/rating/jquery.rating-stars.js"></script>
+
+    <!--Sidemenu ~-->
+    <script src="~/assets/plugins/toggle-menu/sidemenu.js"></script>
+
+    <!-- P-scroll~s-->
+    <script src="~/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+    <script src="~/assets/plugins/p-scroll/p-scroll1.js"></script>
+
+    <!-- Apexchar~js-->
+    <script src="~/assets/js/apexcharts.js"></script>
+
+    <!-- Flot Cha~s js-->
+    <script src="~/assets/plugins/flot/jquery.flot.js"></script>
+    <script src="~/assets/plugins/flot/jquery.flot.fillbetween.js"></script>
+    <script src="~/assets/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peitycha~ js-->
+    <script src="~/assets/plugins/peitychart/jquery.peity.min.js"></script>
+    <script src="~/assets/plugins/peitychart/peitychart.init.js"></script>
+
+    <!-- ECharts ~-->
+    <script src="~/assets/plugins/echarts/echarts.js"></script>
+
+    <!--Chart js -->
+    <script src="~/assets/plugins/chart/chart.min.js"></script>
+    <script src="~/assets/plugins/chart/chart.extension.js"></script>
+    <script src="~/assets/plugins/chartjs/chart.js"></script>
+
+    <!-- Index js-->
+    <script src="~/assets/js/index4.js"></script>
+    <script src="~/assets/js/myScript.js">	</script>
+    <!-- Custom js-->
+    <script src="~/assets/js/custom.js"></script>
+    @RenderSection("scripts",required:false)
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+﻿@{
+    ViewData["Title"] = "StartWork";
+}
+@model CustomerVM
+@section style{
+<link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
+<link href="../assets/css/Customer.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<style>
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: red;
+    }
+
+    form, table.xx, .cont {
+        width: 500px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0)
+    }
+
+    .y {
+        position: relative;
+        margin-left: 10px;
+        width: 310px
+    }
+
+    .ctrl {
+        width: 300px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+        column-gap: 5px
+    }
+
+    #update, #cls {
+        color: white;
+    }
+</style>
+}
+<center>
+    <h1 style="margin-top:100px;">Making Order</h1>
+</center>
+<form>
+    <input type="hidden" asp-for="Custo_Id" id="cust_id" disabled />
+    <div class="form-group">
+        <label class="lb" asp-for="Name">Name</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Name" disabled>
+        <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+    </div>
+    <div class="form-group">
+        <label class="lb" asp-for="address">Address</label>
+        <input type="Text" class="form-control" id="address" placeholder="Enter Address" asp-for="address" disabled>
+        <span asp-validation-for="address" class="text-danger font-weight-bold"></span>
+    </div>
+    <div class="form-group">
+        <label class="lb" asp-for="phone">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" asp-for="phone" disabled>
+        <span asp-validation-for="phone" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+
+        <span class="text-danger font-weight-bold">@ViewBag.phonewarn</span>
+    </div>
+    <div class="form-group">
+        <label class="lb" asp-for="mail"> Email</label>
+        <input type="email" class="form-control" id="mail" placeholder="Enter mail" asp-for="mail" disabled>
+        <span asp-validation-for="mail" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+        <br />
+        <span class="text-danger font-weight-bold">@ViewBag.mailwarn</span>
+    </div>
+
+</form>
+<div class="cont" style="margin-top:380px; width:500px">
+
+    <div class="form-group">
+        <label>Product</label><br />
+        <select class="form-control x" asp-items="(SelectList)ViewBag.products">
+        </select><br />
+
+    </div>
+
+    <div class="form-group">
+        <label>Quantity</label><br />
+        <input class="form-control q" type="number" />
+
+    </div>
+    <div class="ctrl">
+        <button type="button" id="Add" class=" btn btn-pill btn-success ">Add</button>
+        <button class="finish btn btn-pill btn-danger "> Calculate</button>
+        <button class="back btn btn-pill btn-warning "> Rolllback</button>
+        <button class="back btn btn-pill btn-primary con"> Confirm</button>
+
+    </div>
+
+</div>
+<table class="table table-bordered table-striped table-hover xx" style="margin-top:650px;margin-bottom:50px;text-align:center">
+    <thead>
+        <tr>
+            <th style="color:red">ID</th>
+            <th style="color:red">Product</th>
+
+            <th style="color:red">Quantity</th>
+
+            <th style="color:red">TotalPrice</th>
+            <th style="color:red">Delete</th>
+            <th style="color:red">+/-</th>
+        </tr>
+    </thead>
+    <tbody class="m">
+    </tbody>
+</table>
+
+@section scripts{
+
+<script src="~/jquery/jquery.js"></script>
+<script src="~/jquery-validation/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+    $("#Add").click(function() {
+
+        //after click add send request to get data of product and append it to table and remove selected item from select list but first send request to ensure that product in stock is enough
+        var text = $(".x").find(":selected").text()
+
+        var status = $(".x option:selected").val();
+        var q = $(".q").val()
+        if (status != null && q != null && status != "" && q != 0) {
+            $.ajax({
+                type: "POST",
+                url: '/MakingOrder/GetData',
+                data: {
+                    prdid: status,
+                    quantity: q
+                },
+
+                success: function(res) {
+                    if(res.code==1){
+
+
+                    $(".m").append("<tr><td>" + status + "</td> <td class='name'>" + res.name + "</td> <td class='quan'>" + q + "</td> <td>" + res.totalPrice + "</td><td><button class='btn btn-danger' id='cls' > x</button></td><td><button class='btn btn-success' id='update'> +/- </button></td></tr>");
+                     $(".x option:selected").remove();
+                    $(".q").val("");
+                    }else{
+                        alert("There is not enough quantity in stock");
+                    }
+                }
+
+            });
+          
+
+        } else {
+            alert("Please,Enter valid product data")
+        }
+    });
+
+
+});
+var total = 0;
+//after click on finish loop on total price column and sum them to get total price and append to table
+$(".finish").click(function() {
+    $("#Add").prop("disabled", true);
+    $(".xx tbody tr").each(function() {
+        var value = $(this).find("td:nth-child(4)").html();
+        var val = parseInt(value);
+        total += val;
+        console.log(total);
+
+    });
+    $(".m").append("<tr><td > totalPrice</td> <td colspan=5>" + total + "</td></tr>");
+
+})
+
+//after click product raw in table is deleted and append it again to select list
+$(".xx ").on("click", " #cls", function() {
+
+    var data = $(this).closest('tr').find(":first-child").html();
+    var id = parseInt(data);
+    var quan = $(this).closest('tr').find(".quan").html();
+
+    $(".x").append("<option value=" + id + ">" + id + "</option>")
+
+    $(this).closest('tr').remove()
+
+
+
+});
+// for increment or decrement product but first send request to ensure that product in stock is enough
+$(".xx ").on("click", " #update", function() {
+
+
+    var newquan = prompt("Enter New Quantity");
+    if (newquan == null || newquan == "") {
+        alert("Enter valid Value");
+
+    } else {
+        var id=$(this).parent().parent().find(":first-child").html();
+        var column=$(this).closest('tr').find(".quan");
+         $.ajax({
+                type: "POST",
+                url: '/MakingOrder/GetData',
+                data: {
+                    prdid: id,
+                    quantity: newquan
+                },
+
+                success: function(res) {
+                    if(res.code==1){
+
+                      
+                     column.html(newquan)
+                    }
+                    else{
+                        alert("There is not enough quantity in stock");
+                    }
+                }
+
+            });
+            
+         
+            }
+   
+    
+
+
+
+});
+//to remove total price raw from table
+$(".back").click(function() {
+    if ($("#Add").prop("disabled") == true) {
+        $(".xx tbody tr:last").remove();
+        $("#Add").prop("disabled", false)
+    }
+
+})
+//after click send data of products to confirm action ato make order and store products
+$(".con").click(function() {
+    var product = [];
+    var total = 0;
+    var quantity = [];
+    var cust = $("#cust_id").val();
+    if ($(".xx tbody tr:last").children().find(":eq(" + 1 + ")").html() == "totalPrice") {
+        $(".xx tbody tr:last").remove();
+
+    }
+      //store products and quantity in arrays
+        for (var i = 0; i < $(".m tr ").length; i++) {
+            product.push($(".m tr:eq(" + i + ") td:eq(" + 0 + ")").html())
+            quantity.push($(".m tr:eq(" + i + ") td:eq(" + 2 + ")").html())
+        }
+        //loop to calc total salary
+        $(".xx tbody tr").each(function() {
+            var value = $(this).find("td:nth-child(4)").html();
+            var val = parseInt(value);
+            total += val;
+            console.log(total);
+        });
+        $.ajax({
+            type: "POST",
+            url: '/MakingOrder/Confirm',
+            data: {
+                id: cust,
+                totalprice: total,
+                products: product,
+                quan: quantity
+            },
+
+            success: function(res) {
+
+                window.location.href = "/Mail/Index?id=" + res.orderno + ""
+
+
+
+
+            }
+
+        });
+    
+
+})
+</script>
+}

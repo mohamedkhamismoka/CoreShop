@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+@model BranchVM
+@section style{
+    <link href="./assets/css/StyleSheet.css" rel="stylesheet" />
+    <link href="./assets/css/Customer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/Customer.css" />
+
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: red;
+        }
+
+        form {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+
+        .y {
+            position: relative;
+            margin-left: 10px;
+            width: 310px
+        }
+     
+  
+     
+    </style>
+}
+<center>
+    <h1 style="margin-top:100px;">Delete Branch</h1>
+</center>
+<form  asp-controller="Branch" asp-action="Delete" method="post">
+   @* <input type="hidden" class="form-control" id="name" placeholder="Enter Name" asp-for="Name" name="nnmae" >
+     <input type="hidden" class="form-control" id="name" placeholder="Enter Name" asp-for="Phone" name="pphone">
+          <input type="hidden" class="form-control"  placeholder="Enter Name" asp-for="Branc_Id" >*@
+
+           <div class="form-group">
+        <label class="lb" asp-for="Branc_Id">ID</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Branc_Id" readonly>
+        <span asp-validation-for="Branc_Id" class="text-danger font-weight-bold"></span>
+    </div>
+       <div class="form-group">
+        <label class="lb" asp-for="Name">Name</label>
+        <input type="Text" class="form-control" id="name" placeholder="Enter Name" asp-for="Name" disabled>
+        <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+    </div>
+    <div class="form-group">
+        <label  class="lb" asp-for="Phone">Phone</label>
+        <input type="Text" class="form-control" id="address" placeholder="Enter Address" asp-for="Phone" disabled>
+        <span asp-validation-for="Phone" class="text-danger font-weight-bold"></span>
+    </div>
+        <div class="form-group">
+        <label  class="lb" asp-for="manager">MGR Name</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Phone Number" asp-for="manager" disabled>
+        <span asp-validation-for="manager" class="text-danger font-weight-bold"></span>
+    </div>
+   
+
+    <center>
+      
+        <a asp-controller="Branch" asp-action="Index" class="btn btn-pill btn-success">Back To Data</a>
+       
+
+    </center>
+</form>
+@section scripts{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+
+
+
+
+
