@@ -57,7 +57,7 @@ namespace WebApplication12.BL.Reposatory
             d.SaveChanges();
         }
         //this method is to  get all customers according to filter
-        public Customer get(Func<Customer, bool> filter = null)
+        public Customer getbyFilter(Func<Customer, bool> filter = null)
         {
 
             var data = d.Customers.Where(filter).FirstOrDefault();

@@ -51,23 +51,23 @@ namespace WebApplication12.Controllers
                 if (ModelState.IsValid)
                 {
                     var data = br.getAll();
-                    var x = false;
-                    var y = false;
+                    var is_name_exist = false;
+                    var is_phone_exist = false;
                     foreach (var item in data)
                     {
                         if (item.Name == bran.Name && nname != item.Name)
                         {
                             ViewBag.Namewarn = "Already Existed Name";
-                            x = true;
+                            is_name_exist = true;
                         }
                         if (item.Phone == bran.Phone && item.Phone != pphone)
                         {
                             ViewBag.phonewarn = "Already Existed phone";
-                            y = true;
+                            is_phone_exist = true;
                         }
 
                     }
-                    if (x == true || y == true)
+                    if (is_name_exist  || is_phone_exist )
                     {
                         return View(bran);
                     }
@@ -104,23 +104,23 @@ namespace WebApplication12.Controllers
                 if (ModelState.IsValid)
                 {
                     var data = br.getAll();
-                    var x = false;
-                    var y = false;
+                    var is_name_exist =  false;
+                    var is_phone_exist  = false;
                     foreach (var item in data)
                     {
                         if (item.Name == bran.Name)
                         {
                             ViewBag.Namewarn = "Already Existed Name";
-                            x = true;
+                            is_name_exist = true;
                         }
                         if (item.Phone == bran.Phone)
                         {
                             ViewBag.phonewarn = "Already Existed phone";
-                            y = true;
+                            is_phone_exist = true;
                         }
 
                     }
-                    if (x == true || y == true)
+                    if (is_name_exist || is_phone_exist)
                     {
                         return View(bran);
                     }

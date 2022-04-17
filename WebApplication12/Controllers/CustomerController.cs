@@ -50,26 +50,21 @@ namespace WebApplication12.Controllers
                 if (ModelState.IsValid)
                 {
                     var data = Custom.Get();
-                    var x = false;
-                    var y = false;
-                    foreach (var item in data)
-
+                    var mail= Custom.getbyFilter(a => a.mail == customer.mail);
+                    var phone= Custom.getbyFilter(a => a.phone == customer.phone);
+                  
+                   
+                    if (mail!=null || phone!=null )
                     {
-                        //check if mail or phone exist before to achieve uniguness
-                        if (item.mail == customer.mail)
+                        if(mail != null)
                         {
-                            ViewBag.mailwarn = "Already Existed Mail";
-                            x = true;
+                          
+                            ViewBag.mailwarn = "Already Existed mail";
                         }
-                        if (item.phone == customer.phone)
+                        if (phone != null)
                         {
                             ViewBag.phonewarn = "Already Existed phone";
-                            y = true;
                         }
-
-                    }
-                    if (x == true || y == true)
-                    {
                         return View(customer);
                     }
                     else
@@ -105,32 +100,30 @@ namespace WebApplication12.Controllers
                 if (ModelState.IsValid)
                 {
                     var data = Custom.Get();
-                    var x = false;
-                    var y = false;
-                    foreach (var item in data)
-                    { //check if mail or phone exist before to achieve uniguness
-                        if (item.mail == cust.mail && eemail != item.mail)
+                    var mail = Custom.getbyFilter(a => a.mail == cust.mail && a.mail!=eemail);
+                    var phone = Custom.getbyFilter(a => a.phone == cust.phone && a.phone!=pphone);
+
+
+                    if (mail != null || phone != null)
+                    {
+                        if (mail != null)
                         {
+
                             ViewBag.mailwarn = "Already Existed Mail";
-                            x = true;
                         }
-                        if (item.phone == cust.phone && item.phone != pphone)
+                        if (phone != null)
                         {
                             ViewBag.phonewarn = "Already Existed phone";
-                            y = true;
                         }
-
-                    }
-                    if (x == true || y == true)
-                    {
                         return View(cust);
                     }
                     else
                     {
                         var res = map.Map<Customer>(cust);
-                        Custom.update(cust.Custo_Id, res);
+                        Custom.update(cust.Custo_Id,res);
                         return RedirectToAction("Index");
                     }
+                    
 
                 }
 

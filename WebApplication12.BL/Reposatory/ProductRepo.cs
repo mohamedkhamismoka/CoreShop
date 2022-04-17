@@ -16,10 +16,7 @@ namespace WebApplication12.BL.Reposatory
         {
             this.d = d;
         }
-        public ProductRepo()
-        {
-
-        }
+      
         //this method to add product  to database
         public void add(Product prd)
         {
@@ -56,7 +53,7 @@ namespace WebApplication12.BL.Reposatory
             d.SaveChanges();
         }
         //this method to get only one product  in data base by filter
-        public Product get(Func<Product, bool> filter = null)
+        public Product getbyfilter(Func<Product, bool> filter = null)
         {
 
             var data = d.Products.Where(filter).FirstOrDefault();

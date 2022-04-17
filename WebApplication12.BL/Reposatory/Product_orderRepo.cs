@@ -27,7 +27,7 @@ namespace WebApplication12.BL.Reposatory
             return data;
         }
 
-        //this method to get all arows from database and retrurn list to solve problem of save changes during foreach loop in mail controller send action
+        //this method to get all rows from database and retrurn list to solve problem of save changes during foreach loop in mail controller send action
         public IList<Product_order> GetListById(int id)
         {
             var data = d.product_Orders.Include(a => a.product).Include(a => a.orders).Where(a => a.ord_id == id).ToList();

@@ -66,7 +66,7 @@ namespace WebApplication12.Controllers
                 {
                  var res = pro_ord.GetListById(orderNo);
                    
-                    var name = cust.get(a => a.mail == mail).Name;
+                    var name = cust.getbyFilter(a => a.mail == mail).Name;
                     byte[] bytes = Encoding.ASCII.GetBytes(tblHtml);
                     MailMessage mm = new MailMessage("atiffahmykhamis@gmail.com", mail);
 

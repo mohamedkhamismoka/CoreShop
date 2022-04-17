@@ -8,8 +8,7 @@ namespace WebApplication12.BL.VM
 {
     public class OrderVM
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+ 
         public int orderr_num { get; set; }
         public int customer_id { get; set; }
         [Required(ErrorMessage = "Total Price is required")]

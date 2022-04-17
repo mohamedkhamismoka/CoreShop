@@ -11,7 +11,7 @@ namespace WebApplication12.BL.Interfaces
         void add(Product prd);
         void update(Product prd, int id);
         void delete(int id);
-        Product get(Func<Product, bool> filter = null);
+        Product getbyfilter(Func<Product, bool> filter = null);
         void increment(int id, int quantity);
         void decrement(int id, int quantity);
         IEnumerable<Product> getEnum(Func<Product, bool> filter = null);

@@ -8,7 +8,7 @@ namespace WebApplication12.BL.VM
 {
     public class ProductVM
     {
-        [Key]
+      
         public int Id { get; set; }
         [Required(ErrorMessage = "Name is required")]
         [MinLength(3)]

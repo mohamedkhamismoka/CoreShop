@@ -37,7 +37,7 @@ namespace WebApplication12.Controllers
         //this action check phonr number if true go to make order else go back 
         public IActionResult direct(string phone)
         {
-            var data = cust.get(a => a.phone == phone);
+            var data = cust.getbyFilter(a => a.phone == phone);
             if (data != null)
             {
                 TempData["cust"] = data.Custo_Id;
@@ -53,7 +53,7 @@ namespace WebApplication12.Controllers
         public IActionResult startWork()
         {
             int id = Convert.ToInt32(TempData["cust"]);
-            var data = cust.get(a => a.Custo_Id == id);
+            var data = cust.getbyFilter(a => a.Custo_Id == id);
             var data2 = map.Map<CustomerVM>(data);
             //this line show fill select list with products id
             ViewBag.products = new SelectList(prd.getEnum(a => a.quantity > 0), "Id", "Id");

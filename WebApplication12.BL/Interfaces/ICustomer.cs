@@ -11,6 +11,6 @@ namespace WebApplication12.BL.Interfaces
         void add(Customer customer);
         void remove(int id);
         void update(int x, Customer customer);
-        Customer get(Func<Customer, bool> filter = null);
+        Customer getbyFilter(Func<Customer, bool> filter = null);
     }
 }

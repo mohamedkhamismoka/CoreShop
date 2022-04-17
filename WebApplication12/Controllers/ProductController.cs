@@ -46,19 +46,19 @@ namespace WebApplication12.Controllers
 
 
                         var data = product.GET();
-                        var x = false;
+                        var is_name_exist = false;
 
                         foreach (var item in data)
                         {
                             if (item.Name == prd.Name)
                             {
                                 ViewBag.namewarn = "Already Existed Product";
-                                x = true;
+                                is_name_exist = true;
                             }
 
 
                         }
-                        if (x == true)
+                        if (is_name_exist)
                         {
                             return View(prd);
                         }
@@ -106,21 +106,12 @@ namespace WebApplication12.Controllers
                     {
 
                         var data = product.GET();
-                        var x = false;
-                        foreach (var item in data)
-                        {
-                            if (item.Name == prd.Name && item.Name != nname)
-                            {
-                                ViewBag.namewarn = "Already Existed Product";
-                                x = true;
-                            }
+                        var is_name_exist = product.getbyfilter(a => a.Name == prd.Name && a.Name != nname);
 
-
-                        }
-                        if (x == true)
+                        if (is_name_exist != null)
                         {
 
-
+                            ViewBag.namewarn = "Already Existed Product";
                             return View(prd);
                         }
                         else
@@ -136,21 +127,12 @@ namespace WebApplication12.Controllers
                     else
                     {
                         var data = product.GET();
-                        var x = false;
-                        foreach (var item in data)
-                        {
-                            if (item.Name == prd.Name && item.Name != nname)
-                            {
-                                ViewBag.namewarn = "Already Existed Product";
-                                x = true;
-                            }
+                        var is_name_exist = product.getbyfilter(a => a.Name == prd.Name && a.Name != nname);
 
-
-                        }
-                        if (x == true)
+                        if (is_name_exist != null)
                         {
 
-                            prd.barcode = img;
+                            ViewBag.namewarn = "Already Existed Product";
                             return View(prd);
                         }
                         else

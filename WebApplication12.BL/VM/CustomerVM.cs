@@ -7,8 +7,7 @@ namespace WebApplication12.BL.VM
 {
     public class CustomerVM
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int Custo_Id { get; set; }
         [Required(ErrorMessage = "Name is Required")]
         [MinLength(3, ErrorMessage = "Min length is 3")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12\\WebApplication12.csproj": {}
+    "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12\\WebApplication12.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj": {
+    "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj",
         "projectName": "WebApplication12.BL",
-        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj"
+              "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
+    "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
         "projectName": "WebApplication12.DAL",
-        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.DAL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -168,14 +168,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12\\WebApplication12.csproj": {
+    "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12\\WebApplication12.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12\\WebApplication12.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12\\WebApplication12.csproj",
         "projectName": "WebApplication12",
-        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12\\WebApplication12.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12\\WebApplication12.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -196,8 +196,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\Desktop\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj"
+              "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.BL\\WebApplication12.BL.csproj"
               }
             }
           }
