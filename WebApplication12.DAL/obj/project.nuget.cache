@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "02bkfTSD+u/cq9+k93pGa8Ka0suPeJeSxt8ti3jP54kWrVmtbHgXYv6zN9QoK+1m0MlLpth5GEIn3W3iP/P1Jg==",
+  "dgSpecHash": "0rE1HY1OED8kfsdH2fAhXHIkDmJnGMcSBlkGW7sUxs4lIqU1JtIgpd3hwcPSabAevcz08mWSB+4xCX+TjII+8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EL-Masria\\Desktop\\flash\\WebApplication12\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
+  "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Masria\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\EL-Masria\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.6\\microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",

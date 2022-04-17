@@ -6,31 +6,7 @@
 @section style{
     <link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
     <link href="../assets/css/Customer.css" rel="stylesheet" />
-
-
-    <style>
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            color: red;
-        }
-
-        form {
-            width: 500px;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%,0)
-        }
-
-        .y {
-            position: relative;
-            margin-left: 10px;
-            width: 310px
-        }
-     
- 
-     
-    </style>
+<link rel="stylesheet" href="~/assets/css/branch.css" />
 }
 <center>
     <h1 style="margin-top:100px;">Create New Customer</h1>
@@ -50,7 +26,7 @@
         <label  class="lb" asp-for="phone">Phone Number</label>
         <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" asp-for="phone">
         <span asp-validation-for="phone" class="text-danger font-weight-bold" style="margin-right:10px"></span>
-       
+
                 <span  class="text-danger font-weight-bold">@ViewBag.phonewarn</span>
     </div>
     <div class="form-group">
@@ -60,11 +36,11 @@
          <br />
         <span  class="text-danger font-weight-bold">@ViewBag.mailwarn</span>
     </div>
-   
+
 
     <center>
         <button type="submit" class="btn btn-pill btn-primary z" style="width:120px">Create</button>
-       
+
 
     </center>
 </form>
