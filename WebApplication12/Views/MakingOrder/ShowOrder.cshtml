@@ -7,7 +7,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Order Details</title>
-    
+    <style>
+        label{
+            float:left
+        }
+    </style>
 </head>
 <body>
     <center>
@@ -18,14 +22,19 @@
     <div id="Grid">
         <h1 style="text-align:center;color:red"> @TempData["x"]</h1>
         <center>
-             <input  type="text" value="@ViewBag.customerName" disabled/> 
-         <input  type="text" value="@ViewBag.customerphone" disabled/>
+            <form style="width:400px">
+                <label style="float:left">Name:</label><br />
+             <input  type="text" value="@ViewBag.customerName" class="form-control" disabled/> <br />
+             <label>phone:</label><br />
+         <input  type="text" value="@ViewBag.customerphone" class="form-control" disabled/>
          <br />
-          <input  type="text" value="@ViewBag.customermail" disabled/>
-          <br />
+           <label>Mail:</label><br />
+          <input  type="text" value="@ViewBag.customermail" class="form-control" disabled/>
+         
+          </form>
         </center>
        
-        <table style="font-size: 12pt;width:500px" class="table table-hover table-striped table-bordered text-center">
+        <table style="font-size: 12pt;width:500px;margin-top:50px" class="table table-hover table-striped table-bordered text-center">
             <tr>
                 <th style="background-color: #B8DBFD;border: 1px solid #ccc">Product ID</th>
                 <th style="background-color: #B8DBFD;border: 1px solid #ccc">Product Name</th>

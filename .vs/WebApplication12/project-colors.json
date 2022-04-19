@@ -5,7 +5,12 @@
       "ProjectGuid": "9dc82f3a-4d96-47c9-865c-f8bd1909abec",
       "DisplayName": "WebApplication12",
       "ColorIndex": 0
+    },
+    "301ab1c4-7950-4a9f-baae-0c0ab58a1670": {
+      "ProjectGuid": "301ab1c4-7950-4a9f-baae-0c0ab58a1670",
+      "DisplayName": "WebApplication12.BL",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
