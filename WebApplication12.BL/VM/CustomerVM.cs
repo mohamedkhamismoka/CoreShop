@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication12.DAL.Entity;
 
 namespace WebApplication12.BL.VM
 {
+
     public class CustomerVM
     {
        
@@ -18,6 +20,7 @@ namespace WebApplication12.BL.VM
         public string phone { get; set; }
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Mail is required")]
+
         public string mail { get; set; }
 
 

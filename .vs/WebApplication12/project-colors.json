@@ -10,7 +10,12 @@
       "ProjectGuid": "301ab1c4-7950-4a9f-baae-0c0ab58a1670",
       "DisplayName": "WebApplication12.BL",
       "ColorIndex": 1
+    },
+    "f91d93bf-1e21-4777-850e-cb189d616f5c": {
+      "ProjectGuid": "f91d93bf-1e21-4777-850e-cb189d616f5c",
+      "DisplayName": "WebApplication12.DAL",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

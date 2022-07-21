@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using WebApplication12.DAL.Entity;
 
 namespace WebApplication12.Controllers
 {
+    [Authorize]
     public class MailController : Controller
     {  // private to be hidden
         //readonly to assign in constructor to achieve DI
@@ -68,17 +70,17 @@ namespace WebApplication12.Controllers
                    
                     var name = cust.getbyFilter(a => a.mail == mail).Name;
                     byte[] bytes = Encoding.ASCII.GetBytes(tblHtml);
-                    MailMessage mm = new MailMessage("atiffahmykhamis@gmail.com", mail);
+                    MailMessage mm = new MailMessage("mohamed.fci_1052@fci.kfs.edu.eg", mail);
 
                     mm.Subject = "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + "";
                     mm.Body = tblHtml;
                     //mm.Attachments.Add(new Attachment(new MemoryStream(bytes), " Your_Order.xls"));
                     mm.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
+                    smtp.Host = "smtp-mail.outlook.com";
                     smtp.EnableSsl = true;
                     System.Net.NetworkCredential credentials = new System.Net.NetworkCredential();
-                    credentials.UserName = "atiffahmykhamis@gmail.com";
+                    credentials.UserName = "mohamed.fci_1052@fci.kfs.edu.eg";
                     credentials.Password = "01065578456M@";
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = credentials;

@@ -30,11 +30,11 @@
                 <span  class="text-danger font-weight-bold">@ViewBag.phonewarn</span>
     </div>
     <div class="form-group">
-        <label  class="lb" asp-for="mail"> Email</label>
+        <label  class="lb" asp-for="mail"> outlook mail</label>
         <input type="email"  class="form-control" id="mail" placeholder="Enter mail"  asp-for="mail">
-        <span asp-validation-for="mail" class="text-danger font-weight-bold" style="margin-right:10px"></span>
+        <span asp-validation-for="mail"  class="text-danger font-weight-bold" style="margin-right:10px"></span>
          <br />
-        <span  class="text-danger font-weight-bold">@ViewBag.mailwarn</span>
+        <span  class="text-danger " id="mailspan" font-weight-bold">@ViewBag.mailwarn</span>
     </div>
 
 
@@ -48,6 +48,13 @@
     <script src="~/jquery/jquery.js"></script>
     <script src="~/jquery-validation/jquery.validate.js"></script>
     <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(document).ready(function(){
+   $("input[type='email']").on('keyup',function(e){
+    $("#mailspan").css("display","none")
+});
+        })
+    </script>
 }
 
 

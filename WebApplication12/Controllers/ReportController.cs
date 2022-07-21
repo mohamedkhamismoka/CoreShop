@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
@@ -6,6 +7,7 @@ using WebApplication12.BL.Interfaces;
 
 namespace WebApplication12.Controllers
 {
+    [Authorize]
     public class ReportController : Controller
     {// private to be hidden
         //readonly to assign in constructor to achieve DI

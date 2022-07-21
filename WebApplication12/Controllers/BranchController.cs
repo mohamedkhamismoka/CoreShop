@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using WebApplication12.BL.VM;
 using WebApplication12.DAL.Entity;
 
 namespace WebApplication12.Controllers
-{
+{[Authorize]
     public class BranchController : Controller
     {   // private to be hidden
         //readonly to assign in constructor to achieve DI
