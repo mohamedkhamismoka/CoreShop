@@ -238,7 +238,7 @@ namespace WebApplication12.DAL.Migrations
 
             modelBuilder.Entity("WebApplication12.DAL.Entity.Customer", b =>
                 {
-                    b.Property<int>("Custo_Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -255,7 +255,7 @@ namespace WebApplication12.DAL.Migrations
                     b.Property<string>("phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Custo_Id");
+                    b.HasKey("id");
 
                     b.ToTable("Customers");
                 });

@@ -122,7 +122,7 @@ namespace WebApplication12.Controllers
                     else
                     {
                         var res = map.Map<Customer>(cust);
-                        Custom.update(cust.Custo_Id,res);
+                        Custom.update(cust.id,res);
                         return RedirectToAction("Index");
                     }
                     

@@ -6,9 +6,9 @@ namespace WebApplication12.DAL.Entity
 {
     public class Customer
     {
-        [Key]
+      
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Custo_Id { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
         public string phone { get; set; }
 

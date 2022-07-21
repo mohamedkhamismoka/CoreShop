@@ -10,8 +10,8 @@ using WebApplication12.DAL.Database;
 namespace WebApplication12.DAL.Migrations
 {
     [DbContext(typeof(Data))]
-    [Migration("20220208150321_start18")]
-    partial class start18
+    [Migration("20220721152756_build")]
+    partial class build
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -240,7 +240,7 @@ namespace WebApplication12.DAL.Migrations
 
             modelBuilder.Entity("WebApplication12.DAL.Entity.Customer", b =>
                 {
-                    b.Property<int>("Custo_Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -257,7 +257,7 @@ namespace WebApplication12.DAL.Migrations
                     b.Property<string>("phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Custo_Id");
+                    b.HasKey("id");
 
                     b.ToTable("Customers");
                 });

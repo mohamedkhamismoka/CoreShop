@@ -40,7 +40,7 @@ namespace WebApplication12.Controllers
         public IActionResult GETMAXORDER()
         {
             var data = from customer in cust.Get()
-                       join order in ord.GetAll() on customer.Custo_Id equals order.customer_id
+                       join order in ord.GetAll() on customer.id equals order.customer_id
                        where order.totalPrice.ToString().Equals((from ord in ord.GetAll() select ord.totalPrice).Max().ToString())
                        select new GETMAXORDER { ordernum = order.orderr_num, customername = customer.Name, customerMAil = customer.mail, totalPrice = order.totalPrice };
 

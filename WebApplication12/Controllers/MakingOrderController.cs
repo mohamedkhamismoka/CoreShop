@@ -42,7 +42,7 @@ namespace WebApplication12.Controllers
             var data = cust.getbyFilter(a => a.phone == phone);
             if (data != null)
             {
-                TempData["cust"] = data.Custo_Id;
+                TempData["cust"] = data.id;
                 return RedirectToAction("startWork");
             }
             else
@@ -55,7 +55,7 @@ namespace WebApplication12.Controllers
         public IActionResult startWork()
         {
             int id = Convert.ToInt32(TempData["cust"]);
-            var data = cust.getbyFilter(a => a.Custo_Id == id);
+            var data = cust.getbyFilter(a => a.id == id);
             var data2 = map.Map<CustomerVM>(data);
             //this line show fill select list with products id
             ViewBag.products = new SelectList(prd.getEnum(a => a.quantity > 0), "Id", "Id");
