@@ -58,7 +58,7 @@ namespace WebApplication12.Controllers
             var data = cust.getbyFilter(a => a.id == id);
             var data2 = map.Map<CustomerVM>(data);
             //this line show fill select list with products id
-            ViewBag.products = new SelectList(prd.getEnum(a => a.quantity > 0), "Id", "Id");
+            ViewBag.products = new SelectList(prd.getEnum(a => a.quantity > 0), "Id", "Name");
             return View(data2);
         }
 
@@ -88,17 +88,14 @@ namespace WebApplication12.Controllers
         //this action take products and and quantity of each product  to make order and log products of order in Product_order Entity
         public JsonResult Confirm(int id, int totalprice, int[] products, int[] quan)
         {
-            //for (int i = 0; i < products.Length; i++)
-            //{
-            //    prd.decrement(products[i], quan[i]);
-            //}
+            
             OrderVM order = new OrderVM();
             order.customer_id = id;
             order.totalPrice = totalprice;
             order.date = DateTime.Now.Date;
             var data = map.Map<order>(order);
            int orderNO= ord.Add(data);
-            //int order_num = ord.GetLast();
+          
             Product_orderVM pr = new Product_orderVM();
             pr.ord_id = orderNO;
             pr.date = DateTime.Now.Date;
