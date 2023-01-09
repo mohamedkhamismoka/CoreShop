@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using System;
 using System.Collections.Generic;
-using System.Net.Mail;
+
 using System.Text;
+using System.Threading.Tasks;
 using WebApplication12.BL.Interfaces;
 using WebApplication12.BL.VM;
 using WebApplication12.DAL.Entity;
@@ -60,7 +63,7 @@ namespace WebApplication12.Controllers
         /* after confirmation convert table to bytes and send data as an email */
         [HttpPost]
 
-        public IActionResult send(string tblHtml, string mail,int orderNo)
+        public async Task<IActionResult> send(string tblHtml, string mail,int orderNo)
         {
 
 
@@ -70,40 +73,53 @@ namespace WebApplication12.Controllers
                    
                     var name = cust.getbyFilter(a => a.mail == mail).Name;
                     byte[] bytes = Encoding.ASCII.GetBytes(tblHtml);
-                    MailMessage mm = new MailMessage("mohamed.fci_1052@fci.kfs.edu.eg", mail);
+                
+                var email = new MimeMessage()
+                {
+                    Sender = MailboxAddress.Parse("mohamedatiffahmy@outlook.com"),
+                    Subject= "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + ""
 
-                    mm.Subject = "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + "";
-                    mm.Body = tblHtml;
-                    //mm.Attachments.Add(new Attachment(new MemoryStream(bytes), " Your_Order.xls"));
-                    mm.IsBodyHtml = true;
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp-mail.outlook.com";
-                    smtp.EnableSsl = true;
-                    System.Net.NetworkCredential credentials = new System.Net.NetworkCredential();
-                    credentials.UserName = "mohamed.fci_1052@fci.kfs.edu.eg";
-                    credentials.Password = "01065578456M@";
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = credentials;
-                    smtp.Port = 587;
-                    try
+
+                };
+                email.To.Add(MailboxAddress.Parse(mail));
+                var builder = new BodyBuilder();
+
+                builder.HtmlBody = tblHtml;
+
+                email.Body = builder.ToMessageBody();
+
+                email.From.Add(new MailboxAddress("El-mohamadia Co", "mohamedatiffahmy@outlook.com"));
+
+
+                try
+                {
+                    using (var smtp = new SmtpClient())
                     {
-                        smtp.Send(mm);
-                        smtp.Dispose();
-                        foreach (var item in res)
-                        {
-                            prd.decrement(item.pro_id, item.quantity);
-                        }
-                        return RedirectToAction("Index", "Home");
-                    }catch (Exception ex)
-                    {
-                        var num = orderNo;
-                        TempData["x"] = "there is error";
-                        return RedirectToAction("Index", new { id = num });
+                        smtp.Connect("smtp-mail.outlook.com", 587, false);
+                        smtp.Authenticate("mohamedatiffahmy@outlook.com", "fullstackdeveloper@99");
+                        await smtp.SendAsync(email);
+                        smtp.Disconnect(true);
                     }
+                    foreach (var item in res)
+                    {
+                        prd.decrement(item.pro_id, item.quantity);
+                    }
+                    return RedirectToAction("Index", "Home");
                 }
+                catch (Exception ex)
+                {
+                    var num = orderNo;
+                    TempData["x"] = "there is error";
+                    return RedirectToAction("Index", new { id = num });
+                }
+            }
+            else
+            {
                 var data = orderNo;
                 TempData["x"] = "there is error";
                 return RedirectToAction("Index", new { id = data });
+            }
+    
             }
             
 

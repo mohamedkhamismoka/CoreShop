@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {}
+    "C:\\Users\\EL-Masria\\Desktop\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
+    "C:\\Users\\EL-Masria\\Desktop\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Desktop\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
         "projectName": "WebApplication12.DAL",
-        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Desktop\\Sales_office\\WebApplication12.DAL\\WebApplication12.DAL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\Sales_office\\WebApplication12.DAL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Desktop\\Sales_office\\WebApplication12.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
