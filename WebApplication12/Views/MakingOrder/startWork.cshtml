@@ -3,13 +3,30 @@
 }
 @model CustomerVM
 @section style{
-<link href="~/assets/css/StyleSheet.css" rel="stylesheet" />
+<link href="~//assets/css/StyleSheet.css" rel="stylesheet" />
 <link href="../assets/css/Customer.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<link rel="stylesheet" href="~/assets/css/branch.css" />
-<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+
 
 <style>
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: red;
+    }
+
+    form, table.xx, .cont {
+        width: 500px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0)
+    }
+
+    .y {
+        position: relative;
+        margin-left: 10px;
+        width: 310px
+    }
 
     .ctrl {
         width: 300px;
@@ -20,13 +37,6 @@
         grid-template-columns: auto auto auto auto;
         justify-content: center;
         column-gap: 5px
-    }
-    .xx{
-        position:absolute;
-        width:500px;
-        left:50%;
-        transform:translate(-50%,0)
-
     }
 
     #update, #cls {
@@ -65,7 +75,7 @@
     </div>
 
 </form>
-<div class="cont" style="margin-top:380px; width:500px;position: absolute;left: 50%;transform: translate(-50%, 0px)";>
+<div class="cont" style="margin-top:380px; width:500px">
 
     <div class="form-group">
         <label>Product</label><br />
@@ -82,7 +92,7 @@
     <div class="ctrl">
         <button type="button" id="Add" class=" btn btn-pill btn-success ">Add</button>
         <button class="finish btn btn-pill btn-danger "> Calculate</button>
-        <button class="back btn btn-pill btn-warning "> Rollback</button>
+        <button class="back btn btn-pill btn-warning "> Rolllback</button>
         <button class="back btn btn-pill btn-primary con"> Confirm</button>
 
     </div>
@@ -110,12 +120,11 @@
 <script src="~/jquery/jquery.js"></script>
 <script src="~/jquery-validation/jquery.validate.js"></script>
 <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-   <script src="~/assets/jquery-editable-select.js"></script>
-<script src="~/assets/Select.js"></script>
-    
 <script>
     $(document).ready(function() {
-
+        if($(".xx tbody").children().length==0){
+            $(".con").prop("disabled",true);
+        }
 
     $("#Add").click(function() {
 
@@ -137,8 +146,9 @@
                     if(res.code==1){
 
 
-                    $(".m").append("<tr><td>" + status + "</td> <td class='name'>" + res.name + "</td> <td class='quan'>" + q + "</td> <td class='res'>" + res.totalPrice + "</td><td><button class='btn btn-danger' id='cls' > x</button></td><td><button class='btn btn-success' id='update'> +/- </button></td></tr>");
+                    $(".m").append("<tr><td>" + status + "</td> <td class='name'>" + res.name + "</td> <td class='quan'>" + q + "</td> <td>" + res.totalPrice + "</td><td><button class='btn btn-danger' id='cls' > x</button></td><td><button class='btn btn-success' id='update'> +/- </button></td></tr>");
                      $(".x option:selected").remove();
+                      $(".con").prop("disabled",false);
                     $(".q").val("");
                     }else{
                         alert("There is not enough quantity in stock");
@@ -155,13 +165,11 @@
 
 
 });
-
+var total = 0;
 //after click on finish loop on total price column and sum them to get total price and append to table
 $(".finish").click(function() {
     $("#Add").prop("disabled", true);
-    var total = 0;
     $(".xx tbody tr").each(function() {
-        
         var value = $(this).find("td:nth-child(4)").html();
         var val = parseInt(value);
         total += val;
@@ -182,6 +190,10 @@ $(".xx ").on("click", " #cls", function() {
     $(".x").append("<option value=" + id + ">" + id + "</option>")
 
     $(this).closest('tr').remove()
+    if($(".xx tbody").children().length==0){
+            $(".con").prop("disabled",true);
+        }
+
 
 
 
@@ -197,7 +209,6 @@ $(".xx ").on("click", " #update", function() {
     } else {
         var id=$(this).parent().parent().find(":first-child").html();
         var column=$(this).closest('tr').find(".quan");
-        var resu=$(this).closest('tr').find(".res");
          $.ajax({
                 type: "POST",
                 url: '/MakingOrder/GetData',
@@ -208,12 +219,9 @@ $(".xx ").on("click", " #update", function() {
 
                 success: function(res) {
                     if(res.code==1){
-                        var x=res.totalPrice;
+
                       
                      column.html(newquan)
-                     resu.html(x);
-                     console.log(res)
-
                     }
                     else{
                         alert("There is not enough quantity in stock");
