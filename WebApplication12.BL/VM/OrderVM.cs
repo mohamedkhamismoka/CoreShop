@@ -18,7 +18,7 @@ namespace WebApplication12.BL.VM
         [Required(ErrorMessage = "Date is required")]
 
         public DateTime date { get; set; }
-        [ForeignKey("customer_id")]
+     
         public Customer customer { get; set; }
         public IEnumerable<Product_order> pro_ord { get; set; }
 

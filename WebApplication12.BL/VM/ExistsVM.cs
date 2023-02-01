@@ -12,12 +12,12 @@ namespace WebApplication12.BL.VM
         [Range(1, 1000)]
 
         public int quantity { get; set; }
-        [ForeignKey("bran_Id")]
+  
         [Required(ErrorMessage = "branch required")]
 
 
         public Branch branch { get; set; }
-        [ForeignKey("pro_Id ")]
+   
         [Required(ErrorMessage = "product required")]
         public Product product { get; set; }
     }
