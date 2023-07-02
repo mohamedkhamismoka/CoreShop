@@ -36,7 +36,14 @@
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="~/assets/skins/hor-skin/leftmenu-icon-default.css" />
     <link rel="stylesheet" href="~/assets/skins/demo.css" />
     <link rel="stylesheet" href="~/assets/fontawesome-iconpicker" />
-
+    <style>
+        #clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:15px
+}
+    </style>
 
     @RenderSection("datatable",required:false)
     @RenderSection("style",required:false)
@@ -88,8 +95,9 @@
                             </div>
                         </div>
                         <div class="d-flex order-lg-2 ml-auto">
-                            <a href="#" data-toggle="search" class="nav-link nav-link-lg d-md-none navsearch"><i class="fa fa-search"></i></a>
-                            <div class="dropdown   header-fullscreen">
+                         @*   <a href="#" data-toggle="search" class="nav-link nav-link-lg d-md-none navsearch"><i class="fa fa-search"></i></a>*@
+                             <div id="clock">8:10:45</div>
+                         <div class="dropdown   header-fullscreen">
                                 <a class="nav-link icon full-screen-link" id="fullscreen-button">
                                     <i class="mdi mdi-arrow-collapse"></i>
                                 </a>
@@ -405,7 +413,39 @@
     <script src="~/assets/js/myScript.js">	</script>
     <!-- Custom js-->
     <script src="~/assets/js/custom.js"></script>
-    @RenderSection("scripts",required:false)
+    <script>
+        setInterval(showTime, 1000);
 
+function showTime() {
+    let time = new Date();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    am_pm = "AM";
+  
+    if (hour > 12) {
+        hour -= 12;
+        am_pm = "PM";
+    }
+    if (hour == 0) {
+        hr = 12;
+        am_pm = "AM";
+    }
+
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    let currentTime =hour + ":" +
+        min + ":" + sec +am_pm;
+
+    document.getElementById("clock")
+        .innerHTML = currentTime;
+}
+
+showTime();
+    </script>
+    @RenderSection("scripts",required:false)
+    
 </body>
 </html>
