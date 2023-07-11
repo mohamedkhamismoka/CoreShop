@@ -114,7 +114,7 @@ this.userman = userman;
 
                     var passwordResetLink = Url.Action("ResetPassword", "Account", new { Email = model.mail, Token = token }, Request.Scheme);
 
-                    MailHelper.sendMail("Password Reset Link", passwordResetLink);
+                    MailHelper.sendMailAsync("Password Reset Link", passwordResetLink,model.mail);
 
 
 

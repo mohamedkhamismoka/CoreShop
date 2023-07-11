@@ -76,7 +76,7 @@ namespace WebApplication12.Controllers
                 
                 var email = new MimeMessage()
                 {
-                    Sender = MailboxAddress.Parse("mohamedatiffahmy@outlook.com"),
+                    Sender = MailboxAddress.Parse("atiffahmykhamis@gmail.com"),
                     Subject= "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + ""
 
 
@@ -88,15 +88,15 @@ namespace WebApplication12.Controllers
 
                 email.Body = builder.ToMessageBody();
 
-                email.From.Add(new MailboxAddress("El-mohamadia Co", "mohamedatiffahmy@outlook.com"));
+                email.From.Add(new MailboxAddress("El-mohamadia Co", "atiffahmykhamis@gmail.com"));
 
 
                 try
                 {
                     using (var smtp = new SmtpClient())
                     {
-                        smtp.Connect("smtp-mail.outlook.com", 587, false);
-                        smtp.Authenticate("mohamedatiffahmy@outlook.com", "fullstackdeveloper@99");
+                        smtp.Connect("smtp.gmail.com", 587, false);
+                        smtp.Authenticate("atiffahmykhamis@gmail.com", "orgfcydfvpbjgyvl");
                         await smtp.SendAsync(email);
                         smtp.Disconnect(true);
                     }

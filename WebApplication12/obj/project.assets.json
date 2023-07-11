@@ -3073,8 +3073,10 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "MailKit": "3.4.3",
           "Microsoft.AspNet.Mvc": "5.2.7",
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
+          "MimeKit": "3.4.3",
           "WebApplication12.DAL": "1.0.0"
         },
         "compile": {

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MimeKit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using MailKit.Net.Smtp;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,28 +13,35 @@ namespace WebApplication12.BL.helper
     public static class MailHelper
     {
        //this class represent service to send mails
-            public static string sendMail(string Title, string Message)
+            public static async Task sendMailAsync(string Title, string Message,string reciever)
             {
-                try
-                {
-
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-
-                    smtp.EnableSsl = true;
-
-                    smtp.Credentials = new NetworkCredential("atiffahmykhamis@gmail.com", "01065578456M");
+            var email = new MimeMessage()
+            {
+                Sender = MailboxAddress.Parse("atiffahmykhamis@gmail.com"),
+                Subject = "message from College system"
 
 
-                    smtp.Send("atiffahmykhamis@gmail.com", "mostafaatif609@gmail.com", Title, Message);
+            };
+            email.To.Add(MailboxAddress.Parse(reciever));
+            var builder = new BodyBuilder();
 
-                    return "Mail Sent Successfully";
 
-                }
-                catch (Exception ex)
-                {
-                    return "Mail Faild";
-                }
+            builder.HtmlBody = Message;
+            email.Body = builder.ToMessageBody();
+
+
+            email.From.Add(new MailboxAddress("El-Mohamdia Co", "atiffahmykhamis@gmail.com"));
+
+
+
+            using (var smtp = new MailKit.Net.Smtp.SmtpClient())
+            {
+                smtp.Connect("smtp.gmail.com", 587, false);
+                smtp.Authenticate("atiffahmykhamis@gmail.com", "carncxaexqpzebqa");
+                await smtp.SendAsync(email);
+                smtp.Disconnect(true);
             }
+        }
         }
     }
 
