@@ -99,6 +99,7 @@ this.userman = userman;
         //forgetpassword  actions
         public IActionResult ForgetPassword()
         {
+           
             return View();
         }
         [HttpPost]

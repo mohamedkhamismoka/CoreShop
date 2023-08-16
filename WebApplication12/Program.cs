@@ -5,6 +5,7 @@ namespace WebApplication12
 {
     public class Program
     {
+      
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using WebApplication12.BL.Interfaces;
 using WebApplication12.BL.VM;
 using WebApplication12.DAL.Entity;
@@ -151,5 +153,8 @@ namespace WebApplication12.Controllers
             Custom.remove(id);
             return RedirectToAction("Index");
         }
+
+      
+    
     }
 }

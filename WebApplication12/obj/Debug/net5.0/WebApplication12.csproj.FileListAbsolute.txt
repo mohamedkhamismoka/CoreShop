@@ -945,7 +945,6 @@ C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.runtimeconfig.json
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.runtimeconfig.dev.json
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.dll
-C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\ref\WebApplication12.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.pdb
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.Views.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\WebApplication12.Views.pdb
@@ -1377,3 +1376,9 @@ C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\staticwebassets\WebApplication12.StaticWebAssets.Pack.cache
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\staticwebassets\msbuild.WebApplication12.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\staticwebassets\msbuild.build.WebApplication12.props
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.WebApplication12.props
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.WebApplication12.props
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12\obj\Debug\net5.0\refint\WebApplication12.dll

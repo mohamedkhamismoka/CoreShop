@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication12.DAL.Entity
@@ -11,7 +12,7 @@ namespace WebApplication12.DAL.Entity
         public string Name { get; set; }
         public string Phone { get; set; }
         public string manager { get; set; }
-
+        
 
 
 

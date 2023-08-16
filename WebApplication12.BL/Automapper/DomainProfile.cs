@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using Org.BouncyCastle.Bcpg;
 using WebApplication12.BL.VM;
+using WebApplication12.DAL;
 using WebApplication12.DAL.Entity;
 
 namespace WebApplication12.BL.Automapper
 {
     public class DomainProfile : Profile
     {
+        
         public DomainProfile()
         {
             CreateMap<CustomerVM, Customer>();

@@ -92,7 +92,6 @@ C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\n
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.json
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.runtimeconfig.dev.json
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.dll
-C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\ref\WebApplication12.BL.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.BL.pdb
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.dll
 C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\bin\Debug\net5.0\WebApplication12.DAL.pdb
@@ -124,3 +123,4 @@ C:\Users\EL-Masria\Desktop\Sales_office\WebApplication12.BL\obj\Debug\net5.0\Web
 C:\Users\EL-Masria\Desktop\Sales_office\WebApplication12.BL\obj\Debug\net5.0\ref\WebApplication12.BL.dll
 C:\Users\EL-Masria\Desktop\Sales_office\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.pdb
 C:\Users\EL-Masria\Desktop\Sales_office\WebApplication12.BL\obj\Debug\net5.0\WebApplication12.BL.genruntimeconfig.cache
+C:\Users\EL-Masria\Documents\GitHub\Sales_office\WebApplication12.BL\obj\Debug\net5.0\refint\WebApplication12.BL.dll
