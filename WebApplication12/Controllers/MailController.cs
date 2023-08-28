@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebApplication12.BL.Interfaces;
@@ -67,17 +71,17 @@ namespace WebApplication12.Controllers
         {
 
 
-                if (tblHtml != null)
-                {
-                 var res = pro_ord.GetListById(orderNo);
-                   
-                    var name = cust.getbyFilter(a => a.mail == mail).Name;
-                    byte[] bytes = Encoding.ASCII.GetBytes(tblHtml);
-                
+            if (tblHtml != null)
+            {
+                var res = pro_ord.GetListById(orderNo);
+
+                var name = cust.getbyFilter(a => a.mail == mail).Name;
+                byte[] bytes = Encoding.ASCII.GetBytes(tblHtml);
+
                 var email = new MimeMessage()
                 {
                     Sender = MailboxAddress.Parse("atiffahmykhamis@gmail.com"),
-                    Subject= "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + ""
+                    Subject = "Thank Your MR " + name + " for your Visit here your order  Bill Details orderNo" + orderNo.ToString() + ""
 
 
                 };
@@ -119,8 +123,42 @@ namespace WebApplication12.Controllers
                 TempData["x"] = "there is error";
                 return RedirectToAction("Index", new { id = data });
             }
-    
-            }
+
+
+            //var stream = new MemoryStream();
+            //using (WordprocessingDocument doc = WordprocessingDocument.Create(stream, DocumentFormat.OpenXml.WordprocessingDocumentType.Document, true))
+            //{
+            //    MainDocumentPart mainPart = doc.AddMainDocumentPart();
+
+            //    new Document(new Body()).Save(mainPart);
+
+            //    Body body = mainPart.Document.Body;
+            //    Paragraph p = new Paragraph();
+            //    ParagraphProperties pp = new ParagraphProperties();
+            //    pp.Justification = new Justification() { Val = JustificationValues.Right };
+            //    // Add paragraph properties to your paragraph
+            //    p.Append(pp);
+            //    // Run
+            //    Run r = new Run();
+            //    Text t = new Text("hello vog") { Space = SpaceProcessingModeValues.Preserve };
+            //    r.Append(t);
+            //    p.Append(r);
+            //    // Add your paragraph to docx body
+            //    body.Append(p);
+
+
+
+
+            //    mainPart.Document.Save();
+
+            //    //if you don't use the using you should close the WordprocessingDocument here
+            //    //doc.Close();
+            //}
+            //stream.Seek(0, SeekOrigin.Begin);
+
+            //return File(stream, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "test.docx");
+
+        }
             
 
 
