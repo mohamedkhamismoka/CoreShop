@@ -23,14 +23,14 @@ namespace WebApplication12.BL.Reposatory
         //this method to get all arows from database
         public IEnumerable<Product_order> GetById(int id)
         {
-            var data = d.product_Orders.Include(a => a.product).Include(a => a.orders).Where(a => a.ord_id == id);
+            var data = d.product_Orders.AsSplitQuery().Include(a => a.product).Include(a => a.orders).Where(a => a.ord_id == id);
             return data;
         }
 
         //this method to get all rows from database and retrurn list to solve problem of save changes during foreach loop in mail controller send action
         public IList<Product_order> GetListById(int id)
         {
-            var data = d.product_Orders.Include(a => a.product).Include(a => a.orders).Where(a => a.ord_id == id).ToList();
+            var data = d.product_Orders.AsSplitQuery().Include(a => a.product).Include(a => a.orders).Where(a => a.ord_id == id).ToList();
             return data;
         }
     }

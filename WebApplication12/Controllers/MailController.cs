@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
+
 using DocumentFormat.OpenXml.Wordprocessing;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Authorization;
@@ -125,46 +126,14 @@ namespace WebApplication12.Controllers
             }
 
 
-            //var stream = new MemoryStream();
-            //using (WordprocessingDocument doc = WordprocessingDocument.Create(stream, DocumentFormat.OpenXml.WordprocessingDocumentType.Document, true))
-            //{
-            //    MainDocumentPart mainPart = doc.AddMainDocumentPart();
-
-            //    new Document(new Body()).Save(mainPart);
-
-            //    Body body = mainPart.Document.Body;
-            //    Paragraph p = new Paragraph();
-            //    ParagraphProperties pp = new ParagraphProperties();
-            //    pp.Justification = new Justification() { Val = JustificationValues.Right };
-            //    // Add paragraph properties to your paragraph
-            //    p.Append(pp);
-            //    // Run
-            //    Run r = new Run();
-            //    Text t = new Text("hello vog") { Space = SpaceProcessingModeValues.Preserve };
-            //    r.Append(t);
-            //    p.Append(r);
-            //    // Add your paragraph to docx body
-            //    body.Append(p);
-
-
-
-
-            //    mainPart.Document.Save();
-
-            //    //if you don't use the using you should close the WordprocessingDocument here
-            //    //doc.Close();
-            //}
-            //stream.Seek(0, SeekOrigin.Begin);
-
-            //return File(stream, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "test.docx");
 
         }
-            
 
 
 
 
-        
+
+
 
 
     }

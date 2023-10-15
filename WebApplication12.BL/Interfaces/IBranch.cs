@@ -9,6 +9,6 @@ namespace WebApplication12.BL.Interfaces
         Branch getBYID(int id);
         void add(Branch branch);
         void remove(int id);
-        void update(int x, Branch branch);
+        void update(int id, Branch branch);
     }
 }

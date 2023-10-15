@@ -41,9 +41,9 @@ namespace WebApplication12.BL.Reposatory
         //this method to update branch from data base by id
         //x is id
         //branch is new values
-        public void update(int x, Branch branch)
+        public void update(int id, Branch branch)
         {
-            var data = d.Branches.Find(x);
+            var data = d.Branches.Find(id);
             d.Entry(data).CurrentValues.SetValues(branch);
             d.SaveChanges();
         }

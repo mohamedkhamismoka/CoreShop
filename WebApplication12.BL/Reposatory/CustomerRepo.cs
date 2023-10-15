@@ -50,9 +50,9 @@ namespace WebApplication12.BL.Reposatory
         //this method to update custmomer in data base by id
         //x is id
         //customer is new values
-        public void update(int x, Customer customer)
+        public void update(int id, Customer customer)
         {
-            var data = d.Customers.Find(x);
+            var data = d.Customers.Find(id);
             d.Entry(data).CurrentValues.SetValues(customer);
             d.SaveChanges();
         }
