@@ -11,7 +11,8 @@ namespace WebApplication12.BL.VM
     public  class LoginVM
     {
         
-[EmailAddress(ErrorMessage = "Enter valid mail")]
+        [EmailAddress(ErrorMessage = "Enter valid mail")]
+        
         [Required(ErrorMessage = "Email Required")]
         public string mail { get; set; }
         [Required(ErrorMessage = "Password Required")]

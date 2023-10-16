@@ -9,7 +9,8 @@ namespace WebApplication12.DAL.Entity
         public int pro_id { get; set; }
         public int ord_id { get; set; }
         public int quantity { get; set; }
-        [DataType(DataType.Date)]
+
+        [Column(TypeName ="Date")]
         public DateTime date { get; set; }
         [ForeignKey("pro_id")]
         public Product product { get; set; }

@@ -10,10 +10,9 @@ namespace WebApplication12.DAL.Entity
 
         public int customer_id { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int orderr_num { get; set; }
+        public int orderid { get; set; }
         public int totalPrice { get; set; }
+        [Column(TypeName ="Date")]
         public DateTime date { get; set; }
 
         [ForeignKey("customer_id")]

@@ -75,7 +75,7 @@ namespace WebApplication12.Controllers
                     else
                     {
                         var res = map.Map<Branch>(bran);
-                        br.update(bran.Branc_Id, res);
+                        br.update(bran.BranchId, res);
                         return RedirectToAction("Index");
                     }
 

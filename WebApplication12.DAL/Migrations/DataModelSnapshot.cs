@@ -217,21 +217,23 @@ namespace WebApplication12.DAL.Migrations
 
             modelBuilder.Entity("WebApplication12.DAL.Entity.Branch", b =>
                 {
-                    b.Property<int>("Branc_Id")
+                    b.Property<int>("BranchId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("manager")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("Branc_Id");
+                    b.HasKey("BranchId");
 
                     b.ToTable("Branches");
                 });
@@ -244,13 +246,15 @@ namespace WebApplication12.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("address")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("mail")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("phone")
                         .HasColumnType("nvarchar(max)");
@@ -274,13 +278,13 @@ namespace WebApplication12.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("expire_date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<int>("price")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("production_date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
@@ -299,7 +303,7 @@ namespace WebApplication12.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
@@ -313,7 +317,7 @@ namespace WebApplication12.DAL.Migrations
 
             modelBuilder.Entity("WebApplication12.DAL.Entity.order", b =>
                 {
-                    b.Property<int>("orderr_num")
+                    b.Property<int>("orderid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -322,12 +326,12 @@ namespace WebApplication12.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<int>("totalPrice")
                         .HasColumnType("int");
 
-                    b.HasKey("orderr_num");
+                    b.HasKey("orderid");
 
                     b.HasIndex("customer_id");
 

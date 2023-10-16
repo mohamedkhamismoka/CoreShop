@@ -6,7 +6,7 @@ namespace WebApplication12.BL.VM
     public class BranchVM
     {
    
-        public int Branc_Id { get; set; }
+        public int BranchId { get; set; }
         [Required(ErrorMessage = "Name is Required")]
         [MinLength(3, ErrorMessage = "Min length is 3")]
         public string Name { get; set; }

@@ -56,7 +56,7 @@ namespace WebApplication12.Controllers
                 totalPrice += item.product.price * item.quantity;
             }
             ViewBag.total = totalPrice;
-            var mm = ord.getspec(a => a.orderr_num == id);
+            var mm = ord.getspec(a => a.orderid == id);
             var idd = mm.customer_id;
             var custo = cust.GetById(idd);
 

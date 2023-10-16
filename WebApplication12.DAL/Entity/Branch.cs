@@ -6,11 +6,12 @@ namespace WebApplication12.DAL.Entity
 {
     public class Branch
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Branc_Id { get; set; }
+    
+        public int BranchId { get; set; }
+        [StringLength(20)]
         public string Name { get; set; }
         public string Phone { get; set; }
+        [StringLength(20)]
         public string manager { get; set; }
         
 

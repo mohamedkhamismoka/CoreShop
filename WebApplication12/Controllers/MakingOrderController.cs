@@ -120,11 +120,11 @@ namespace WebApplication12.Controllers
         public IActionResult GetorderData(int orderr_num)
         {
             
-                var data=ord.getspec(a=>a.orderr_num==orderr_num);
+                var data=ord.getspec(a=>a.orderid==orderr_num);
                 if (data != null)
                 {
                 var res = map.Map<OrderVM>(data);
-                    return RedirectToAction("ShowOrder", new{ orderNo = res.orderr_num});
+                    return RedirectToAction("ShowOrder", new{ orderNo = res.orderid});
                 }
                 else
                 {

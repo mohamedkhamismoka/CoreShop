@@ -38,7 +38,7 @@ namespace WebApplication12.Controllers
                 foreach(var item in data)
                 {
                     current_row++;
-                    worksheet.Cell(current_row, 1).Value = item.orderr_num;
+                    worksheet.Cell(current_row, 1).Value = item.orderid;
                     worksheet.Cell(current_row, 2).Value = item.customer.Name;
                     worksheet.Cell(current_row, 3).Value = item.totalPrice;
                     worksheet.Cell(current_row, 4).Value = item.date;

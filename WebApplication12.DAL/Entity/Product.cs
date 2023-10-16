@@ -7,13 +7,13 @@ namespace WebApplication12.DAL.Entity
 {
     public class Product
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+      
         public int Id { get; set; }
         public string Name { get; set; }
         public int price { get; set; }
+        [Column(TypeName ="Date")]
         public DateTime expire_date { get; set; }
-
+        [Column(TypeName = "Date")]
         public DateTime production_date { get; set; }
 
         public int quantity { get; set; }

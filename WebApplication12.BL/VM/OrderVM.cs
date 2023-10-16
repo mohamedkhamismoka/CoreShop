@@ -9,7 +9,7 @@ namespace WebApplication12.BL.VM
     public class OrderVM
     {
  
-        public int orderr_num { get; set; }
+        public int orderid { get; set; }
         public int customer_id { get; set; }
         [Required(ErrorMessage = "Total Price is required")]
         [Range(1, 1000)]

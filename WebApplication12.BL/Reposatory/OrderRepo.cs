@@ -20,7 +20,7 @@ namespace WebApplication12.BL.Reposatory
         {
             d.Orders.Add(order);
             d.SaveChanges();
-            return d.Orders.OrderByDescending(a=>a.orderr_num).First().orderr_num;
+            return d.Orders.OrderByDescending(a=>a.orderid).First().orderid;
         }
         //this method to remove order from database by id
         public void Delete(int id)

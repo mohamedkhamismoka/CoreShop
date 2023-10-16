@@ -16,9 +16,9 @@
 
 <form asp-controller="MakingOrder" asp-action="GetorderData" method="post" >
     <div class="form-group">
-        <label class="lb" asp-for="orderr_num">Order Number:</label>
-            <input type="text"  class="form-control" asp-for="orderr_num" />
-            <span asp-validation-for="orderr_num" class="font-weight-bold text-danger" style="margin-right:10px"></span>
+        <label class="lb" asp-for="orderid">Order Number:</label>
+        <input type="text" class="form-control" asp-for="orderid" />
+        <span asp-validation-for="orderid" class="font-weight-bold text-danger" style="margin-right:10px"></span>
      <span  class="font-weight-bold text-danger" style="margin-right:10px">@ViewBag.warn</span>
             
     </div>
